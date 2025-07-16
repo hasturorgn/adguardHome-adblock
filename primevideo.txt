@@ -1,0 +1,13 @@
+! Prime Video Ad Blocklist - for AdGuard Home / Pi-hole
+! Updated: 2025-07-15
+||aax-us-east.amazon-adsystem.com^
+||aax-us-west.amazon-adsystem.com^
+||s.amazon-adsystem.com^
+||mads.amazon-adsystem.com^
+||amazon-adsystem.com^
+||fls-na.amazon.com^
+||metrics.awswaf.com^
+||c.amazon-adsystem.com^
+||device-metrics-us.amazon.com^
+||dp.analytics-api.amazon.com^
+||firetvads.amazon.com^
