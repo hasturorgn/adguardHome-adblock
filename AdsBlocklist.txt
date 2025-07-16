@@ -11,3 +11,13 @@
 ||device-metrics-us.amazon.com^
 ||dp.analytics-api.amazon.com^
 ||firetvads.amazon.com^
+
+! Twitch Ads Blocklist (Safe & Lightweight) - 2025年7月版
+||ads.twitch.tv^
+||gql.twitch.tv/gql*$script,domain=twitch.tv
+||spade.twitch.tv^
+||twitch-ads.net^
+||track.twitch.tv^
+||twitchads.tv^
+||pubads.g.doubleclick.net^
+||imasdk.googleapis.com^
