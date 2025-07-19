@@ -21,4 +21,3 @@
 ||twitchads.tv^
 ||pubads.g.doubleclick.net^
 ||imasdk.googleapis.com^
-||*.cloudfront.hls.ttvnw.net^
