@@ -21,3 +21,7 @@
 ||twitchads.tv^
 ||pubads.g.doubleclick.net^
 ||imasdk.googleapis.com^
+
+||twitchcdn.net/assets^
+||amazon-adsystem.com^
+||googleads.g.doubleclick.net^
