@@ -30,3 +30,18 @@
 @@||video-weaver.hls.ttvnw.net^$important
 @@||video-edge.hls.ttvnw.net^$important
 @@||static-cdn.jtvnw.net^$important
+
+! ============================
+! YouTube Ads Blocklist (Safe)
+! Updated: 2025-08-26
+! ============================
+||pagead2.googlesyndication.com^
+||googleads.g.doubleclick.net^
+||pubads.g.doubleclick.net^
+||ad.doubleclick.net^
+||youtube.googleapis.com/v1/player/ads^
+||youtube.googleapis.com/v1/player/ad_break^
+||youtubei.googleapis.com/youtubei/v1/player/ad^
+||youtubei.googleapis.com/youtubei/v1/player/ads^
+||s.youtube.com^
+||video-stats.video.google.com^
