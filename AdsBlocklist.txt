@@ -1,18 +1,18 @@
 ! Prime Video Ad Blocklist - for AdGuard Home / Pi-hole
-! Updated: 2025-07-15
+! Updated: 2025-08-26
 ||aax-us-east.amazon-adsystem.com^
 ||aax-us-west.amazon-adsystem.com^
 ||s.amazon-adsystem.com^
 ||mads.amazon-adsystem.com^
-||amazon-adsystem.com^
-||fls-na.amazon.com^
-||metrics.awswaf.com^
 ||c.amazon-adsystem.com^
+||firetvads.amazon.com^
+||metrics.awswaf.com^
 ||device-metrics-us.amazon.com^
 ||dp.analytics-api.amazon.com^
-||firetvads.amazon.com^
+||fls-na.amazon.com^
+||amazon-adsystem.com^
 
-! Twitch Ads Blocklist (Safe & Lightweight) - 2025年7月版
+! Twitch Ads Blocklist (Safe & Extended) - 2025-08-26
 ||ads.twitch.tv^
 ||gql.twitch.tv/gql*$script,domain=twitch.tv
 ||spade.twitch.tv^
@@ -21,7 +21,12 @@
 ||twitchads.tv^
 ||pubads.g.doubleclick.net^
 ||imasdk.googleapis.com^
-
 ||twitchcdn.net/assets^
-||amazon-adsystem.com^
 ||googleads.g.doubleclick.net^
+
+! --- Safety exceptions (whitelist to prevent playback/UI breakage) ---
+@@||gql.twitch.tv^$important
+@@||usher.ttvnw.net^$important
+@@||video-weaver.hls.ttvnw.net^$important
+@@||video-edge.hls.ttvnw.net^$important
+@@||static-cdn.jtvnw.net^$important
