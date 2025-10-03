@@ -12,16 +12,17 @@
 ||fls-na.amazon.com^
 ||amazon-adsystem.com^
 
-! Twitch Ads Blocklist (Safe & Extended) - 2025-08-26
+! Twitch Ads Blocklist (Safe & Extended) - 2025-10-03
+! AdGuard Home向け Twitch関連ドメイン (安全性が高いものに限定)
 ||ads.twitch.tv^
-||gql.twitch.tv/gql*$script,domain=twitch.tv
-||spade.twitch.tv^
+||ads-lc.twitch.tv^
+||video-ads.twitch.tv^
 ||twitch-ads.net^
-||track.twitch.tv^
 ||twitchads.tv^
+||track.twitch.tv^
+||spade.twitch.tv^
 ||pubads.g.doubleclick.net^
 ||imasdk.googleapis.com^
-||twitchcdn.net/assets^
 ||googleads.g.doubleclick.net^
 
 ! --- Safety exceptions (whitelist to prevent playback/UI breakage) ---
