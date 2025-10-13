@@ -1,5 +1,9 @@
-! Prime Video Ad Blocklist - for AdGuard Home / Pi-hole
-! Updated: 2025-08-26
+! ============================================
+! Unified Ad Blocklist for Prime Video / Twitch / YouTube
+! Updated: 2025-10-14
+! ============================================
+
+! --- Prime Video Ads & Tracking ---
 ||aax-us-east.amazon-adsystem.com^
 ||aax-us-west.amazon-adsystem.com^
 ||s.amazon-adsystem.com^
@@ -12,37 +16,39 @@
 ||fls-na.amazon.com^
 ||amazon-adsystem.com^
 
-! Twitch Ads Blocklist (Safe & Extended) - 2025-10-03
-! AdGuard Home向け Twitch関連ドメイン (安全性が高いものに限定)
+! --- Twitch Ads & Tracking ---
 ||ads.twitch.tv^
-||ads-lc.twitch.tv^
-||video-ads.twitch.tv^
-||twitch-ads.net^
-||twitchads.tv^
-||track.twitch.tv^
+||gql.twitch.tv/gql*$script,domain=twitch.tv
 ||spade.twitch.tv^
+||twitch-ads.net^
+||track.twitch.tv^
+||twitchads.tv^
 ||pubads.g.doubleclick.net^
 ||imasdk.googleapis.com^
+||twitchcdn.net/assets^
 ||googleads.g.doubleclick.net^
 
-! --- Safety exceptions (whitelist to prevent playback/UI breakage) ---
-@@||gql.twitch.tv^$important
+! --- YouTube Ads & Tracking ---
+||googleads.g.doubleclick.net^
+||pagead2.googlesyndication.com^
+||pubads.g.doubleclick.net^
+||ad.doubleclick.net^
+||youtubei.googleapis.com/youtubei/v1/player/ad^
+||youtubei.googleapis.com/youtubei/v1/player/ads^
+||youtubei.googleapis.com/youtubei/v1/player/ad_break^
+||youtube.googleapis.com/v1/player/ads^
+||youtube.googleapis.com/v1/player/ad_break^
+||s.youtube.com^
+||video-stats.video.google.com^
+||youtube.googleapis.com/v1/track^    # トラッキングAPI
+
+! --- Whitelist / Exceptions (再生維持用) ---
 @@||usher.ttvnw.net^$important
 @@||video-weaver.hls.ttvnw.net^$important
 @@||video-edge.hls.ttvnw.net^$important
+@@||gql.twitch.tv^$important
 @@||static-cdn.jtvnw.net^$important
 
-! ============================
-! YouTube Ads Blocklist (Safe)
-! Updated: 2025-08-26
-! ============================
-||pagead2.googlesyndication.com^
-||googleads.g.doubleclick.net^
-||pubads.g.doubleclick.net^
-||ad.doubleclick.net^
-||youtube.googleapis.com/v1/player/ads^
-||youtube.googleapis.com/v1/player/ad_break^
-||youtubei.googleapis.com/youtubei/v1/player/ad^
-||youtubei.googleapis.com/youtubei/v1/player/ads^
-||s.youtube.com^
-||video-stats.video.google.com^
+! --- Experimental (may break some streams) ---
+/^video-.*\.ads\.hls\.ttvnw\.net$/
+/^video-edge-.*\.ads\.hls\.ttvnw\.net$/
