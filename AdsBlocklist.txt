@@ -1,9 +1,11 @@
 ! ============================================
 ! Unified Ad Blocklist for Prime Video / Twitch / YouTube
-! Updated: 2025-10-14
+! Updated: 2025-11-18
 ! ============================================
 
-! --- Prime Video Ads & Tracking ---
+! --------------------------------------------
+! Prime Video (Ads / Metrics)
+! --------------------------------------------
 ||aax-us-east.amazon-adsystem.com^
 ||aax-us-west.amazon-adsystem.com^
 ||s.amazon-adsystem.com^
@@ -16,39 +18,57 @@
 ||fls-na.amazon.com^
 ||amazon-adsystem.com^
 
-! --- Twitch Ads & Tracking ---
+! --------------------------------------------
+! Twitch Ads & Tracking
+! --------------------------------------------
 ||ads.twitch.tv^
-||gql.twitch.tv/gql*$script,domain=twitch.tv
-||spade.twitch.tv^
+||ads-lc.twitch.tv^
+||video-ads.twitch.tv^
 ||twitch-ads.net^
-||track.twitch.tv^
 ||twitchads.tv^
+||track.twitch.tv^
+||spade.twitch.tv^
 ||pubads.g.doubleclick.net^
 ||imasdk.googleapis.com^
-||twitchcdn.net/assets^
 ||googleads.g.doubleclick.net^
 
-! --- YouTube Ads & Tracking ---
-||googleads.g.doubleclick.net^
-||pagead2.googlesyndication.com^
-||pubads.g.doubleclick.net^
-||ad.doubleclick.net^
-||youtubei.googleapis.com/youtubei/v1/player/ad^
-||youtubei.googleapis.com/youtubei/v1/player/ads^
-||youtubei.googleapis.com/youtubei/v1/player/ad_break^
-||youtube.googleapis.com/v1/player/ads^
-||youtube.googleapis.com/v1/player/ad_break^
-||s.youtube.com^
-||video-stats.video.google.com^
-||youtube.googleapis.com/v1/track^    # トラッキングAPI
+! Twitch AdScript Blocking (NEW 11/2025)
+||gql.twitch.tv/gql*$script,domain=twitch.tv
+||prod-edge-chat.twitch.tv^$important    # NEW（広告イベントの混入対策）
 
-! --- Whitelist / Exceptions (再生維持用) ---
+! Twitch HLS Ad Segments (Experimental)
+#/^video-.*\.ads\.hls\.ttvnw\.net$/
+#/^video-edge-.*\.ads\.hls\.ttvnw\.net$/
+
+! --------------------------------------------
+! Twitch Critical Services (Whitelist)
+! --------------------------------------------
+@@||gql.twitch.tv^$important
 @@||usher.ttvnw.net^$important
 @@||video-weaver.hls.ttvnw.net^$important
 @@||video-edge.hls.ttvnw.net^$important
-@@||gql.twitch.tv^$important
 @@||static-cdn.jtvnw.net^$important
 
-! --- Experimental (may break some streams) ---
-/^video-.*\.ads\.hls\.ttvnw\.net$/
-/^video-edge-.*\.ads\.hls\.ttvnw\.net$/
+! --------------------------------------------
+! YouTube Ads / Tracking API
+! --------------------------------------------
+||pagead2.googlesyndication.com^
+||googleads.g.doubleclick.net^
+||pubads.g.doubleclick.net^
+||ad.doubleclick.net^
+
+||youtubei.googleapis.com/youtubei/v1/player/ad^
+||youtubei.googleapis.com/youtubei/v1/player/ads^
+||youtubei.googleapis.com/youtubei/v1/player/ad_break^
+||youtube.googleapis.com/v1/player/ad_break^
+||youtube.googleapis.com/v1/player/ads^
+
+! YouTube Tracking (updated 11/2025)
+||s.youtube.com^
+||video-stats.video.google.com^
+||youtube.googleapis.com/v1/track^
+||youtubei.googleapis.com/youtubei/v1/log_event^    # NEW（トラッキング強化）
+
+! ============================================
+! End of List (2025-11-18)
+! ============================================
