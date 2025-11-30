@@ -1,6 +1,6 @@
 ! ============================================
 ! Unified Ad Blocklist for Prime Video / Twitch / YouTube
-! Updated: 2025-11-18
+! Updated: 2025-12-07
 ! ============================================
 
 ! --------------------------------------------
@@ -18,6 +18,10 @@
 ||fls-na.amazon.com^
 ||amazon-adsystem.com^
 
+! NEW (12/2025) - Prime Video UI tracking
+||pv-ads-eu.amazon.com^
+||pv-ads-na.amazon.com^
+
 ! --------------------------------------------
 ! Twitch Ads & Tracking
 ! --------------------------------------------
@@ -32,10 +36,15 @@
 ||imasdk.googleapis.com^
 ||googleads.g.doubleclick.net^
 
-! Twitch AdScript Blocking (NEW 11/2025)
+! Twitch AdScript Blocking
 ||gql.twitch.tv/gql*$script,domain=twitch.tv
-||prod-edge-chat.twitch.tv^$important    # NEW（広告イベントの混入対策）
 
+! NEW (12/2025) — Twitch Tracking/Ads
+||ad-api.twitch.tv^
+||events.twitch.tv^
+||edge-events-reporter.twitch.tv^
+
+! --------------------------------------------
 ! Twitch HLS Ad Segments (Experimental)
 #/^video-.*\.ads\.hls\.ttvnw\.net$/
 #/^video-edge-.*\.ads\.hls\.ttvnw\.net$/
@@ -63,12 +72,16 @@
 ||youtube.googleapis.com/v1/player/ad_break^
 ||youtube.googleapis.com/v1/player/ads^
 
-! YouTube Tracking (updated 11/2025)
+! YouTube Tracking
 ||s.youtube.com^
 ||video-stats.video.google.com^
 ||youtube.googleapis.com/v1/track^
-||youtubei.googleapis.com/youtubei/v1/log_event^    # NEW（トラッキング強化）
+||youtubei.googleapis.com/youtubei/v1/log_event^
+
+! NEW (12/2025) — Behavior block
+||youtubei.googleapis.com/youtubei/v1/interaction^
+||youtubei.googleapis.com/youtubei/v1/user_event^
 
 ! ============================================
-! End of List (2025-11-18)
+! End of List (2025-12-07)
 ! ============================================
