@@ -1,87 +1,65 @@
-! ============================================
-! Unified Ad Blocklist for Prime Video / Twitch / YouTube
-! Updated: 2025-12-07
-! ============================================
+! =====================================================
+! Unified AdGuard Home Filter
+! Prime Video + Twitch + YouTube
+! Updated: 2025-12-21
+! Safe DNS-only (Playback Safe)
+! =====================================================
 
-! --------------------------------------------
-! Prime Video (Ads / Metrics)
-! --------------------------------------------
+! -----------------------------------------------------
+! Prime Video / Amazon Ads & Metrics
+! -----------------------------------------------------
 ||aax-us-east.amazon-adsystem.com^
 ||aax-us-west.amazon-adsystem.com^
 ||s.amazon-adsystem.com^
 ||mads.amazon-adsystem.com^
 ||c.amazon-adsystem.com^
-||firetvads.amazon.com^
-||metrics.awswaf.com^
-||device-metrics-us.amazon.com^
-||dp.analytics-api.amazon.com^
-||fls-na.amazon.com^
 ||amazon-adsystem.com^
 
-! NEW (12/2025) - Prime Video UI tracking
-||pv-ads-eu.amazon.com^
+||firetvads.amazon.com^
 ||pv-ads-na.amazon.com^
+||pv-ads-eu.amazon.com^
 
-! --------------------------------------------
-! Twitch Ads & Tracking
-! --------------------------------------------
+||device-metrics-us.amazon.com^
+||dp.analytics-api.amazon.com^
+||metrics.awswaf.com^
+||fls-na.amazon.com^
+
+! -----------------------------------------------------
+! Twitch Ads / Tracking (DNS safe)
+! -----------------------------------------------------
 ||ads.twitch.tv^
 ||ads-lc.twitch.tv^
 ||video-ads.twitch.tv^
-||twitch-ads.net^
 ||twitchads.tv^
-||track.twitch.tv^
+||twitch-ads.net^
+
 ||spade.twitch.tv^
-||pubads.g.doubleclick.net^
-||imasdk.googleapis.com^
-||googleads.g.doubleclick.net^
+||track.twitch.tv^
 
-! Twitch AdScript Blocking
-||gql.twitch.tv/gql*$script,domain=twitch.tv
-
-! NEW (12/2025) — Twitch Tracking/Ads
+! Twitch ad measurement / events (2025 Q4)
 ||ad-api.twitch.tv^
 ||events.twitch.tv^
 ||edge-events-reporter.twitch.tv^
 
-! --------------------------------------------
-! Twitch HLS Ad Segments (Experimental)
-#/^video-.*\.ads\.hls\.ttvnw\.net$/
-#/^video-edge-.*\.ads\.hls\.ttvnw\.net$/
+! -----------------------------------------------------
+! Twitch required services (DO NOT BLOCK)
+! -----------------------------------------------------
+@@||gql.twitch.tv^
+@@||usher.ttvnw.net^
+@@||video-weaver.hls.ttvnw.net^
+@@||video-edge.hls.ttvnw.net^
+@@||static-cdn.jtvnw.net^
 
-! --------------------------------------------
-! Twitch Critical Services (Whitelist)
-! --------------------------------------------
-@@||gql.twitch.tv^$important
-@@||usher.ttvnw.net^$important
-@@||video-weaver.hls.ttvnw.net^$important
-@@||video-edge.hls.ttvnw.net^$important
-@@||static-cdn.jtvnw.net^$important
-
-! --------------------------------------------
-! YouTube Ads / Tracking API
-! --------------------------------------------
+! -----------------------------------------------------
+! YouTube Ads / Tracking (DNS safe)
+! -----------------------------------------------------
 ||pagead2.googlesyndication.com^
 ||googleads.g.doubleclick.net^
 ||pubads.g.doubleclick.net^
 ||ad.doubleclick.net^
 
-||youtubei.googleapis.com/youtubei/v1/player/ad^
-||youtubei.googleapis.com/youtubei/v1/player/ads^
-||youtubei.googleapis.com/youtubei/v1/player/ad_break^
-||youtube.googleapis.com/v1/player/ad_break^
-||youtube.googleapis.com/v1/player/ads^
-
-! YouTube Tracking
 ||s.youtube.com^
 ||video-stats.video.google.com^
+
 ||youtube.googleapis.com/v1/track^
-||youtubei.googleapis.com/youtubei/v1/log_event^
 
-! NEW (12/2025) — Behavior block
-||youtubei.googleapis.com/youtubei/v1/interaction^
-||youtubei.googleapis.com/youtubei/v1/user_event^
-
-! ============================================
-! End of List (2025-12-07)
-! ============================================
