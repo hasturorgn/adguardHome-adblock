@@ -2,30 +2,22 @@
 ! Unified AdGuard Home Filter
 ! Prime Video + Twitch + YouTube
 ! Updated: 2025-12-21
-! Safe DNS-only (Playback Safe)
+! DNS-only / Fire TV & Playback Safe
 ! =====================================================
 
 ! -----------------------------------------------------
-! Prime Video / Amazon Ads & Metrics
+! Prime Video / Amazon (EXTERNAL ads only)
 ! -----------------------------------------------------
 ||aax-us-east.amazon-adsystem.com^
 ||aax-us-west.amazon-adsystem.com^
-||s.amazon-adsystem.com^
-||mads.amazon-adsystem.com^
 ||c.amazon-adsystem.com^
-||amazon-adsystem.com^
 
-||firetvads.amazon.com^
+! Prime Video ad endpoints (safe subset)
 ||pv-ads-na.amazon.com^
 ||pv-ads-eu.amazon.com^
 
-||device-metrics-us.amazon.com^
-||dp.analytics-api.amazon.com^
-||metrics.awswaf.com^
-||fls-na.amazon.com^
-
 ! -----------------------------------------------------
-! Twitch Ads / Tracking (DNS safe)
+! Twitch Ads / Tracking (DNS-safe subset)
 ! -----------------------------------------------------
 ||ads.twitch.tv^
 ||ads-lc.twitch.tv^
@@ -36,22 +28,12 @@
 ||spade.twitch.tv^
 ||track.twitch.tv^
 
-! Twitch ad measurement / events (2025 Q4)
+! Twitch measurement / events (non-playback)
 ||ad-api.twitch.tv^
-||events.twitch.tv^
 ||edge-events-reporter.twitch.tv^
 
 ! -----------------------------------------------------
-! Twitch required services (DO NOT BLOCK)
-! -----------------------------------------------------
-@@||gql.twitch.tv^
-@@||usher.ttvnw.net^
-@@||video-weaver.hls.ttvnw.net^
-@@||video-edge.hls.ttvnw.net^
-@@||static-cdn.jtvnw.net^
-
-! -----------------------------------------------------
-! YouTube Ads / Tracking (DNS safe)
+! YouTube Ads / Tracking (DNS-safe)
 ! -----------------------------------------------------
 ||pagead2.googlesyndication.com^
 ||googleads.g.doubleclick.net^
@@ -61,5 +43,19 @@
 ||s.youtube.com^
 ||video-stats.video.google.com^
 
-||youtube.googleapis.com/v1/track^
+! -----------------------------------------------------
+! REQUIRED SERVICES (DO NOT BLOCK)
+! Fire TV / Twitch playback will break if blocked
+! -----------------------------------------------------
+@@||gql.twitch.tv^
+@@||usher.ttvnw.net^
+@@||video-weaver.hls.ttvnw.net^
+@@||video-edge.hls.ttvnw.net^
+@@||static-cdn.jtvnw.net^
 
+@@||firetvads.amazon.com^
+@@||device-metrics-us.amazon.com^
+@@||dp.analytics-api.amazon.com^
+@@||metrics.awswaf.com^
+@@||fls-na.amazon.com^
+@@||firetvcaptiveportal.com^
