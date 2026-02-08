@@ -1,20 +1,24 @@
 ! =====================================================
 ! Unified AdGuard Home Filter
 ! Prime Video + Twitch + YouTube
-! Updated: 2025-12-21
-! DNS-only / Fire TV & Playback Safe
+! Updated: 2026-02-08
+! DNS-only / Fire TV & Playback Safe / 2026 Optimized
 ! =====================================================
 
 ! -----------------------------------------------------
-! Prime Video / Amazon (EXTERNAL ads only)
+! Prime Video / Amazon (EXTERNAL ads & Data telemetry)
 ! -----------------------------------------------------
 ||aax-us-east.amazon-adsystem.com^
 ||aax-us-west.amazon-adsystem.com^
+||aax-fe-jp.amazon-adsystem.com^
 ||c.amazon-adsystem.com^
+||s.amazon-adsystem.com^
 
-! Prime Video ad endpoints (safe subset)
+! Prime Video ad endpoints (Updated for 2026)
 ||pv-ads-na.amazon.com^
 ||pv-ads-eu.amazon.com^
+||pv-ads-fe.amazon.com^
+||mads.amazon-adsystem.com^
 
 ! -----------------------------------------------------
 ! Twitch Ads / Tracking (DNS-safe subset)
@@ -27,10 +31,12 @@
 
 ||spade.twitch.tv^
 ||track.twitch.tv^
+||countess.twitch.tv^
 
 ! Twitch measurement / events (non-playback)
 ||ad-api.twitch.tv^
 ||edge-events-reporter.twitch.tv^
+||telemetry.twitch.tv^
 
 ! -----------------------------------------------------
 ! YouTube Ads / Tracking (DNS-safe)
@@ -39,23 +45,30 @@
 ||googleads.g.doubleclick.net^
 ||pubads.g.doubleclick.net^
 ||ad.doubleclick.net^
+||securepubads.g.doubleclick.net^
 
 ||s.youtube.com^
 ||video-stats.video.google.com^
+||youtube-ui.l.google.com^
 
 ! -----------------------------------------------------
 ! REQUIRED SERVICES (DO NOT BLOCK)
-! Fire TV / Twitch playback will break if blocked
+! 再生停止・サインインエラーを防ぐためのホワイトリスト
 ! -----------------------------------------------------
+! Twitch Playback essential
 @@||gql.twitch.tv^
 @@||usher.ttvnw.net^
 @@||video-weaver.hls.ttvnw.net^
 @@||video-edge.hls.ttvnw.net^
 @@||static-cdn.jtvnw.net^
+@@||passport.twitch.tv^
 
+! Amazon / Fire TV System essential
 @@||firetvads.amazon.com^
 @@||device-metrics-us.amazon.com^
 @@||dp.analytics-api.amazon.com^
 @@||metrics.awswaf.com^
 @@||fls-na.amazon.com^
+@@||fls-fe.amazon.com^
 @@||firetvcaptiveportal.com^
+@@||softwareupdates.amazon.com^
