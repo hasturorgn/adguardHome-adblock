@@ -49,7 +49,7 @@
 
 ||s.youtube.com^
 ||video-stats.video.google.com^
-||youtube-ui.l.google.com^
+!||youtube-ui.l.google.com^
 
 ! -----------------------------------------------------
 ! REQUIRED SERVICES (DO NOT BLOCK)
