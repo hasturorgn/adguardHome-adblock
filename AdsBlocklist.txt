@@ -1,45 +1,40 @@
 ! =====================================================
 ! Unified AdGuard Home Filter
-! Prime Video + Twitch + YouTube
-! Updated: 2026-02-08
-! DNS-only / Fire TV & Playback Safe / 2026 Optimized
+! Prime Video + Twitch + YouTube (SmartTube/ReVanced Safe)
+! Updated: 2026-03-15
+! DNS-only / Fire TV & Third-party App Friendly
 ! =====================================================
 
 ! -----------------------------------------------------
-! Prime Video / Amazon (EXTERNAL ads & Data telemetry)
+! Prime Video / Amazon (External Ads & Analytics)
 ! -----------------------------------------------------
 ||aax-us-east.amazon-adsystem.com^
 ||aax-us-west.amazon-adsystem.com^
 ||aax-fe-jp.amazon-adsystem.com^
 ||c.amazon-adsystem.com^
 ||s.amazon-adsystem.com^
-
-! Prime Video ad endpoints (Updated for 2026)
+||mads.amazon-adsystem.com^
 ||pv-ads-na.amazon.com^
 ||pv-ads-eu.amazon.com^
 ||pv-ads-fe.amazon.com^
-||mads.amazon-adsystem.com^
 
 ! -----------------------------------------------------
-! Twitch Ads / Tracking (DNS-safe subset)
+! Twitch Ads / Tracking (DNS-safe)
 ! -----------------------------------------------------
 ||ads.twitch.tv^
 ||ads-lc.twitch.tv^
 ||video-ads.twitch.tv^
 ||twitchads.tv^
 ||twitch-ads.net^
-
 ||spade.twitch.tv^
 ||track.twitch.tv^
 ||countess.twitch.tv^
-
-! Twitch measurement / events (non-playback)
 ||ad-api.twitch.tv^
 ||edge-events-reporter.twitch.tv^
 ||telemetry.twitch.tv^
 
 ! -----------------------------------------------------
-! YouTube Ads / Tracking (DNS-safe)
+! YouTube Ads / Tracking (Safe for 3rd-party Apps)
 ! -----------------------------------------------------
 ||pagead2.googlesyndication.com^
 ||googleads.g.doubleclick.net^
@@ -49,13 +44,16 @@
 
 ||s.youtube.com^
 ||video-stats.video.google.com^
-!||youtube-ui.l.google.com^
 
 ! -----------------------------------------------------
 ! REQUIRED SERVICES (DO NOT BLOCK)
-! 再生停止・サインインエラーを防ぐためのホワイトリスト
 ! -----------------------------------------------------
-! Twitch Playback essential
+! YouTube 3rd-party Auth & UI (Fixed for login issues)
+@@||youtubei.googleapis.com^
+@@||accounts.google.com^
+@@||yt3.ggpht.com^
+
+! Twitch Playback & Auth
 @@||gql.twitch.tv^
 @@||usher.ttvnw.net^
 @@||video-weaver.hls.ttvnw.net^
@@ -63,7 +61,7 @@
 @@||static-cdn.jtvnw.net^
 @@||passport.twitch.tv^
 
-! Amazon / Fire TV System essential
+! Fire TV & Amazon System
 @@||firetvads.amazon.com^
 @@||device-metrics-us.amazon.com^
 @@||dp.analytics-api.amazon.com^
