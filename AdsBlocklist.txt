@@ -72,3 +72,8 @@
 @@||fls-fe.amazon.com^
 @@||firetvcaptiveportal.com^
 @@||softwareupdates.amazon.com^
+
+! abema white list
+@@||imasdk.googleapis.com^$important
+@@||lma.npaw.com^$important
+@@||mobile-collector.newrelic.com^$important
