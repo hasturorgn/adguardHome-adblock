@@ -1,7 +1,7 @@
 ! =====================================================
 ! Unified AdGuard Home Filter
 ! Prime Video + Twitch + YouTube (SmartTube/ReVanced Safe)
-! Updated: 2026-03-21
+! Updated: 2026-04-18
 ! DNS-only / Fire TV & Third-party App Friendly / HAR Optimized
 ! =====================================================
 
@@ -17,6 +17,7 @@
 ||pv-ads-na.amazon.com^
 ||pv-ads-eu.amazon.com^
 ||pv-ads-fe.amazon.com^
+||unagi.amazon.com^
 
 ! -----------------------------------------------------
 ! Twitch Ads / Tracking (DNS-safe)
@@ -32,6 +33,7 @@
 ||ad-api.twitch.tv^
 ||edge-events-reporter.twitch.tv^
 ||telemetry.twitch.tv^
+||log-upload.twitch.tv^
 
 ! -----------------------------------------------------
 ! YouTube Ads / Tracking (Safe for 3rd-party Apps)
@@ -43,6 +45,7 @@
 ||securepubads.g.doubleclick.net^
 ||google.com/pagead/^
 ||youtube.com/s/player/*/ad-*.js^
+||jnn-pa.googleapis.com^
 
 ||s.youtube.com^
 ||video-stats.video.google.com^
@@ -50,7 +53,7 @@
 ! -----------------------------------------------------
 ! REQUIRED SERVICES (DO NOT BLOCK)
 ! -----------------------------------------------------
-! YouTube 3rd-party Auth & UI (Fixed for login issues)
+! YouTube 3rd-party Auth & UI
 @@||youtubei.googleapis.com^
 @@||accounts.google.com^
 @@||yt3.ggpht.com^
@@ -72,8 +75,3 @@
 @@||fls-fe.amazon.com^
 @@||firetvcaptiveportal.com^
 @@||softwareupdates.amazon.com^
-
-! abema white list
-@@||imasdk.googleapis.com^$important
-@@||lma.npaw.com^$important
-@@||mobile-collector.newrelic.com^$important
